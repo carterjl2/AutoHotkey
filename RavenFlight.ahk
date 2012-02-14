@@ -1,9 +1,12 @@
-;Developed by  Valkyrie Systems
+; Developed by: Corey Swoyer
+; Used to replace build in EVE Online Auto Pilot
+; Be sure to place the ScreenCapture.ahk into the same location as this script
+
 
 #Include ScreenCapture.ahk
 
+; ########################### Verify Settings INI and promt for setup if not exists ###########################
 CheckSettings()
-;GetSettings()
 
 IniRead, OverPos1, AutopilotSettings.ini,  OverviewPos, Point1
 IniRead, OverPos2, AutopilotSettings.ini,  OverviewPos, Point2
@@ -22,6 +25,7 @@ WinWait, EVE,
 IfWinNotActive, EVE, , WinActivate, EVE, 
 WinWaitActive, EVE, 
 
+; ########################### Search for waypoint image and loop until missing ###########################
 CoordMode Pixel
 ImageSearch, FoundX, FoundY, %OverPos1%, %OverPos2%, %OverPos3%, %OverPos4%, waypoint.bmp
 
@@ -69,8 +73,8 @@ End:
 SoundPlay, full_stop.wav, wait
 MsgBox Destination reached..
 
-;Procedures are below
 
+; ########################### Procedures Only Below This Point ###########################
 
 CheckSettings()
 {
