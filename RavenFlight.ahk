@@ -1,5 +1,5 @@
 ; Developed by: Corey Swoyer
-; Used to replace build in EVE Online Auto Pilot
+; Used to replace built in EVE Online Auto Pilot
 ; Be sure to place the ScreenCapture.ahk into the same location as this script
 
 
